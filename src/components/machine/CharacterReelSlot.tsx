@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { sound } from '@/lib/audio';
@@ -54,7 +54,7 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
   if (targetChar === ' ') {
     return (
       <div
-        className={`shrink-0 ${
+        className={`min-w-0 ${
           isLongRow
             ? 'w-1 xs:w-1.5 sm:w-3 h-10 xs:h-12 sm:h-20'
             : isMediumRow
@@ -86,7 +86,7 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
     : 'h-[52px] xs:h-[60px] sm:h-[88px]';
 
   return (
-    <div className="relative flex items-center justify-center select-none shrink-0">
+    <div className="relative flex items-center justify-center select-none min-w-0">
       {/* Individual Drum Reel Housing (Zero wrapping, fluid responsive scaling) */}
       <div
         className={`${slotDimensions} relative overflow-hidden transition-all duration-150 border sm:border-2 ${

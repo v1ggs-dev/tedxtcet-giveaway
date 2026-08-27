@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
 import { CharacterReelSlot } from './CharacterReelSlot';
@@ -255,7 +255,7 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
                 : topRowLength >= 8
                 ? 'gap-1 xs:gap-1.5 sm:gap-2'
                 : 'gap-1 xs:gap-1.5 sm:gap-2.5'
-            } max-w-full px-0.5 sm:px-2 z-10 relative overflow-hidden`}
+            } w-full px-0.5 sm:px-2 z-10 relative`}
           >
             {topChars.map((char, localIdx) => {
               const globalIndex = localIdx;
@@ -284,7 +284,7 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
                   : bottomRowLength >= 8
                   ? 'gap-1 xs:gap-1.5 sm:gap-2'
                   : 'gap-1 xs:gap-1.5 sm:gap-2.5'
-              } max-w-full px-0.5 sm:px-2 z-10 relative overflow-hidden`}
+              } w-full px-0.5 sm:px-2 z-10 relative`}
             >
               {bottomChars.map((char, localIdx) => {
                 const globalIndex = topChars.length + localIdx;
