@@ -30,7 +30,6 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
       const pitchFactor = 0.9 + (globalIndex / Math.max(totalSlots, 1)) * 0.35;
       sound.playLockSnap(pitchFactor);
 
-      // Settle bounce
       setHasOvershot(true);
       const timer = setTimeout(() => setHasOvershot(false), 140);
       return () => clearTimeout(timer);
@@ -47,37 +46,42 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
     return chars;
   }, [globalIndex]);
 
-  // Dynamic slot sizing based on number of characters in row
+  // -------------------------------------------------------------------------
+  // Sizing tiers — drives both the flex-item wrapper AND inner housing
+  // -------------------------------------------------------------------------
   const isLongRow = rowLength >= 10;
   const isMediumRow = rowLength >= 8 && rowLength < 10;
 
+  // Space character → thin spacer
   if (targetChar === ' ') {
     return (
       <div
-        className={`min-w-0 ${
+        className={
           isLongRow
-            ? 'w-1 xs:w-1.5 sm:w-3 h-10 xs:h-12 sm:h-20'
+            ? 'w-1 xs:w-1.5 sm:w-3 h-10 xs:h-12 sm:h-20 shrink'
             : isMediumRow
-            ? 'w-1.5 xs:w-2 sm:w-3.5 h-12 xs:h-14 sm:h-20'
-            : 'w-2 xs:w-2.5 sm:w-4 h-13 xs:h-15 sm:h-22'
-        }`}
+            ? 'w-1.5 xs:w-2 sm:w-3.5 h-12 xs:h-14 sm:h-20 shrink'
+            : 'w-2 xs:w-2.5 sm:w-4 h-13 xs:h-15 sm:h-22 shrink'
+        }
       />
     );
   }
 
   const isCurrentlySpinning = isSpinning && !isLocked;
 
-  const slotDimensions = isLongRow
-    ? 'w-[20px] xs:w-[25px] sm:w-10 md:w-12 h-10 xs:h-12 sm:h-20 md:h-22 rounded sm:rounded-lg'
+  // Outer wrapper sizing — this is the flex item the row container lays out.
+  // It carries width + height and is allowed to shrink (no shrink-0).
+  const wrapperSize = isLongRow
+    ? 'w-5 xs:w-6 sm:w-10 md:w-12 h-10 xs:h-12 sm:h-20 md:h-22'
     : isMediumRow
-    ? 'w-6 xs:w-7.5 sm:w-10 md:w-12 h-12 xs:h-14 sm:h-20 md:h-22 rounded-md sm:rounded-lg'
-    : 'w-7 xs:w-8.5 sm:w-11 md:w-13 h-13 xs:h-15 sm:h-22 rounded-md sm:rounded-lg';
+    ? 'w-6 xs:w-7 sm:w-10 md:w-12 h-12 xs:h-14 sm:h-20 md:h-22'
+    : 'w-7 xs:w-8 sm:w-11 md:w-13 h-13 xs:h-15 sm:h-22';
 
   const fontDimensions = isLongRow
-    ? 'text-xs xs:text-sm sm:text-2xl md:text-3xl'
+    ? 'text-[10px] xs:text-xs sm:text-2xl md:text-3xl'
     : isMediumRow
-    ? 'text-sm xs:text-base sm:text-2xl md:text-3xl'
-    : 'text-base xs:text-xl sm:text-3xl md:text-4xl';
+    ? 'text-xs xs:text-sm sm:text-2xl md:text-3xl'
+    : 'text-sm xs:text-lg sm:text-3xl md:text-4xl';
 
   const rollHeight = isLongRow
     ? 'h-[40px] xs:h-[48px] sm:h-[80px]'
@@ -86,10 +90,10 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
     : 'h-[52px] xs:h-[60px] sm:h-[88px]';
 
   return (
-    <div className="relative flex items-center justify-center select-none min-w-0">
-      {/* Individual Drum Reel Housing (Zero wrapping, fluid responsive scaling) */}
+    <div className={`${wrapperSize} relative select-none shrink`}>
+      {/* Inner housing — fills parent, clips spin animation */}
       <div
-        className={`${slotDimensions} relative overflow-hidden transition-all duration-150 border sm:border-2 ${
+        className={`w-full h-full relative overflow-hidden transition-all duration-150 rounded sm:rounded-lg border sm:border-2 ${
           isLocked
             ? 'border-[#EB0028] ivory-reel-strip shadow-[0_0_8px_rgba(235,0,40,0.4)]'
             : isCurrentlySpinning

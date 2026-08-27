@@ -247,16 +247,8 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
           {/* Attract Mode Dynamic Sheen Sweep */}
           {!isSpinning && <div className="dynamic-glass-sheen z-20" />}
 
-          {/* 1. TOP ROW — Always strictly on a SINGLE LINE (flex-nowrap) */}
-          <div
-            className={`flex flex-nowrap items-center justify-center ${
-              topRowLength >= 10
-                ? 'gap-0.5 xs:gap-1 sm:gap-2'
-                : topRowLength >= 8
-                ? 'gap-1 xs:gap-1.5 sm:gap-2'
-                : 'gap-1 xs:gap-1.5 sm:gap-2.5'
-            } w-full px-0.5 sm:px-2 z-10 relative`}
-          >
+          {/* 1. TOP ROW — single line, slots shrink to fit */}
+          <div className="flex flex-nowrap items-center justify-center gap-0.5 xs:gap-1 sm:gap-2 w-full px-0.5 sm:px-2 z-10 relative">
             {topChars.map((char, localIdx) => {
               const globalIndex = localIdx;
               const isSlotLocked = localIdx < lockedTopCount;
@@ -275,17 +267,9 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
             })}
           </div>
 
-          {/* 2. BOTTOM ROW — Always strictly on a SINGLE LINE (flex-nowrap) */}
+          {/* 2. BOTTOM ROW — single line, slots shrink to fit */}
           {bottomChars.length > 0 && (
-            <div
-              className={`flex flex-nowrap items-center justify-center ${
-                bottomRowLength >= 10
-                  ? 'gap-0.5 xs:gap-1 sm:gap-2'
-                  : bottomRowLength >= 8
-                  ? 'gap-1 xs:gap-1.5 sm:gap-2'
-                  : 'gap-1 xs:gap-1.5 sm:gap-2.5'
-              } w-full px-0.5 sm:px-2 z-10 relative`}
-            >
+            <div className="flex flex-nowrap items-center justify-center gap-0.5 xs:gap-1 sm:gap-2 w-full px-0.5 sm:px-2 z-10 relative">
               {bottomChars.map((char, localIdx) => {
                 const globalIndex = topChars.length + localIdx;
                 const isSlotLocked = localIdx < lockedBottomCount;
