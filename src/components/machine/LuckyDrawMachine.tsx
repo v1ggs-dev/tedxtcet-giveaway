@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { MechanicalReelDisplay } from './MechanicalReelDisplay';
@@ -182,9 +182,9 @@ export const LuckyDrawMachine: React.FC = () => {
                 className="h-7 xs:h-9 sm:h-13 md:h-15 w-auto object-contain drop-shadow-[0_2px_12px_rgba(255,255,255,0.4)]"
               />
 
-              {/* TICKETS GIVEAWAY Title */}
+              {/* TICKETS GIVEAWAY Title — Strictly ONE LINE on all devices */}
               <h1
-                className="text-xs xs:text-sm sm:text-2xl md:text-3xl font-black text-white uppercase tracking-[0.14em] xs:tracking-[0.18em] sm:tracking-[0.2em] arcade-title-shadow mt-1 sm:mt-2 leading-none"
+                className="text-[10px] xs:text-xs sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider xs:tracking-[0.14em] sm:tracking-[0.2em] arcade-title-shadow mt-1 sm:mt-2 leading-none whitespace-nowrap"
                 style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}
               >
                 ★ TICKETS GIVEAWAY ★

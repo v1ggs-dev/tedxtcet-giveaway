@@ -213,6 +213,9 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
   const bottomChars = displayText.bottom.split('');
   const totalSlots = topChars.length + bottomChars.length;
 
+  const topRowLength = topChars.length;
+  const bottomRowLength = bottomChars.length;
+
   return (
     <div className="w-full flex flex-col items-center justify-center relative">
       {/* 3D Curved Retro Arcade CRT Monitor Frame */}
@@ -244,8 +247,16 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
           {/* Attract Mode Dynamic Sheen Sweep */}
           {!isSpinning && <div className="dynamic-glass-sheen z-20" />}
 
-          {/* 1. TOP ROW */}
-          <div className="flex flex-wrap items-center justify-center gap-1 xs:gap-1.5 sm:gap-2.5 max-w-full px-1 sm:px-2 z-10 relative">
+          {/* 1. TOP ROW — Always strictly on a SINGLE LINE (flex-nowrap) */}
+          <div
+            className={`flex flex-nowrap items-center justify-center ${
+              topRowLength >= 10
+                ? 'gap-0.5 xs:gap-1 sm:gap-2'
+                : topRowLength >= 8
+                ? 'gap-1 xs:gap-1.5 sm:gap-2'
+                : 'gap-1 xs:gap-1.5 sm:gap-2.5'
+            } max-w-full px-0.5 sm:px-2 z-10 relative overflow-hidden`}
+          >
             {topChars.map((char, localIdx) => {
               const globalIndex = localIdx;
               const isSlotLocked = localIdx < lockedTopCount;
@@ -255,6 +266,7 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
                   key={`top-${localIdx}-${char}-${displayText.top}`}
                   globalIndex={globalIndex}
                   totalSlots={totalSlots}
+                  rowLength={topRowLength}
                   targetChar={char}
                   isSpinning={isSpinning}
                   isLocked={isSlotLocked}
@@ -263,9 +275,17 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
             })}
           </div>
 
-          {/* 2. BOTTOM ROW */}
+          {/* 2. BOTTOM ROW — Always strictly on a SINGLE LINE (flex-nowrap) */}
           {bottomChars.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-1 xs:gap-1.5 sm:gap-2.5 max-w-full px-1 sm:px-2 z-10 relative">
+            <div
+              className={`flex flex-nowrap items-center justify-center ${
+                bottomRowLength >= 10
+                  ? 'gap-0.5 xs:gap-1 sm:gap-2'
+                  : bottomRowLength >= 8
+                  ? 'gap-1 xs:gap-1.5 sm:gap-2'
+                  : 'gap-1 xs:gap-1.5 sm:gap-2.5'
+              } max-w-full px-0.5 sm:px-2 z-10 relative overflow-hidden`}
+            >
               {bottomChars.map((char, localIdx) => {
                 const globalIndex = topChars.length + localIdx;
                 const isSlotLocked = localIdx < lockedBottomCount;
@@ -275,6 +295,7 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
                     key={`bottom-${localIdx}-${char}-${displayText.bottom}`}
                     globalIndex={globalIndex}
                     totalSlots={totalSlots}
+                    rowLength={bottomRowLength}
                     targetChar={char}
                     isSpinning={isSpinning}
                     isLocked={isSlotLocked}
