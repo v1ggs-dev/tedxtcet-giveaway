@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
@@ -146,7 +146,7 @@ export const WinnerStageCard: React.FC<WinnerStageCardProps> = ({ draw }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-40 flex items-center justify-center transition-all duration-700 ${
+      className={`fixed inset-0 z-40 flex items-center justify-center p-3 sm:p-6 transition-all duration-700 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -155,16 +155,16 @@ export const WinnerStageCard: React.FC<WinnerStageCardProps> = ({ draw }) => {
 
       {/* Animated radial spotlight glow */}
       <div
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full pointer-events-none transition-all duration-[2000ms] ${
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] xs:w-[500px] sm:w-[750px] h-[350px] xs:h-[500px] sm:h-[750px] rounded-full pointer-events-none transition-all duration-[2000ms] ${
           glowPulse
-            ? 'bg-gradient-to-b from-[#EB0028]/25 via-red-950/20 to-transparent blur-[140px] scale-110'
-            : 'bg-gradient-to-b from-[#EB0028]/12 via-red-950/10 to-transparent blur-[100px] scale-100'
+            ? 'bg-gradient-to-b from-[#EB0028]/25 via-red-950/20 to-transparent blur-[80px] sm:blur-[140px] scale-110'
+            : 'bg-gradient-to-b from-[#EB0028]/12 via-red-950/10 to-transparent blur-[60px] sm:blur-[100px] scale-100'
         }`}
       />
 
       {/* Main content container */}
       <div
-        className={`relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl w-full transition-all duration-700 ${
+        className={`relative z-10 flex flex-col items-center justify-center text-center px-2 xs:px-4 sm:px-6 max-w-4xl w-full transition-all duration-700 ${
           isVisible ? 'translate-y-0 scale-100' : 'translate-y-8 scale-95'
         }`}
       >
@@ -173,44 +173,44 @@ export const WinnerStageCard: React.FC<WinnerStageCardProps> = ({ draw }) => {
         <img
           src="https://cdn.v1ggs.lol/tedxtcet/logo-white.png"
           alt="TEDxTCET"
-          className={`h-12 sm:h-16 md:h-20 w-auto object-contain mb-4 drop-shadow-[0_2px_14px_rgba(255,255,255,0.4)] transition-all duration-700 ${
+          className={`h-8 xs:h-11 sm:h-16 md:h-20 w-auto object-contain mb-2 xs:mb-3 sm:mb-4 drop-shadow-[0_2px_14px_rgba(255,255,255,0.4)] transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           }`}
         />
 
         {/* Decorative top red/white divider with stars */}
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-[#EB0028]" />
-          <span className="text-[#EB0028] text-lg">★</span>
-          <span className="text-white text-sm">★</span>
-          <span className="text-[#EB0028] text-lg">★</span>
-          <div className="w-16 sm:w-24 h-px bg-gradient-to-l from-transparent to-[#EB0028]" />
+        <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+          <div className="w-10 xs:w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-[#EB0028]" />
+          <span className="text-[#EB0028] text-sm sm:text-lg">★</span>
+          <span className="text-white text-xs sm:text-sm">★</span>
+          <span className="text-[#EB0028] text-sm sm:text-lg">★</span>
+          <div className="w-10 xs:w-16 sm:w-24 h-px bg-gradient-to-l from-transparent to-[#EB0028]" />
         </div>
 
         {/* 2026 TICKETS GIVEAWAY WINNER */}
         <p
-          className={`text-sm sm:text-base md:text-lg font-mono font-black tracking-[0.35em] text-[#EB0028] uppercase mb-5 transition-all duration-700 delay-200 ${
+          className={`text-xs xs:text-sm sm:text-base md:text-lg font-mono font-black tracking-[0.2em] xs:tracking-[0.28em] sm:tracking-[0.35em] text-[#EB0028] uppercase mb-2 xs:mb-3 sm:mb-5 transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
           ★ 2026 TICKETS GIVEAWAY WINNER ★
         </p>
 
-        {/* Winner Name — Massive Hero Display */}
+        {/* Winner Name — Massive Hero Display (Responsive for Phones) */}
         <div
-          className={`transition-all duration-700 delay-300 ${
+          className={`transition-all duration-700 delay-300 max-w-full px-2 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
         >
           <h1
-            className="text-6xl sm:text-8xl md:text-9xl font-black text-white tracking-[0.08em] leading-[0.9] drop-shadow-[0_6px_30px_rgba(235,0,40,0.7)]"
+            className="text-4xl xs:text-5xl sm:text-8xl md:text-9xl font-black text-white tracking-[0.05em] sm:tracking-[0.08em] leading-[0.95] drop-shadow-[0_4px_25px_rgba(235,0,40,0.7)] break-words"
             style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}
           >
             {firstName}
           </h1>
           {lastName && (
             <h1
-              className="text-6xl sm:text-8xl md:text-9xl font-black text-white tracking-[0.08em] leading-[0.9] mt-1 drop-shadow-[0_6px_30px_rgba(235,0,40,0.7)]"
+              className="text-4xl xs:text-5xl sm:text-8xl md:text-9xl font-black text-white tracking-[0.05em] sm:tracking-[0.08em] leading-[0.95] mt-1 drop-shadow-[0_4px_25px_rgba(235,0,40,0.7)] break-words"
               style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}
             >
               {lastName}
@@ -221,7 +221,7 @@ export const WinnerStageCard: React.FC<WinnerStageCardProps> = ({ draw }) => {
         {/* Luxury Branded Instagram Winner Tag Pill */}
         {igHandle && (
           <div
-            className={`mt-6 inline-flex items-center gap-3.5 px-6 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-black/90 via-[#180A0D]/95 to-black/90 border-2 border-[#EB0028]/60 shadow-[0_0_35px_rgba(235,0,40,0.4)] backdrop-blur-xl relative overflow-hidden transition-all duration-700 delay-500 ${
+            className={`mt-3 xs:mt-4 sm:mt-6 inline-flex items-center gap-2.5 xs:gap-3.5 px-4 xs:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-black/90 via-[#180A0D]/95 to-black/90 border-2 border-[#EB0028]/60 shadow-[0_0_35px_rgba(235,0,40,0.4)] backdrop-blur-xl relative overflow-hidden transition-all duration-700 delay-500 max-w-full ${
               showDetails ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'
             }`}
           >
@@ -230,7 +230,7 @@ export const WinnerStageCard: React.FC<WinnerStageCardProps> = ({ draw }) => {
 
             {/* Official Instagram 2016 Multi-Gradient SVG Logo */}
             <svg
-              className="w-9 h-9 sm:w-11 sm:h-11 drop-shadow-[0_2px_10px_rgba(235,0,40,0.6)] shrink-0 z-10"
+              className="w-7 h-7 xs:w-9 xs:h-9 sm:w-11 sm:h-11 drop-shadow-[0_2px_10px_rgba(235,0,40,0.6)] shrink-0 z-10"
               viewBox="0 0 132.004 132"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -287,11 +287,11 @@ export const WinnerStageCard: React.FC<WinnerStageCardProps> = ({ draw }) => {
             </svg>
 
             {/* Handle details */}
-            <div className="flex flex-col text-left z-10 pr-2">
-              <span className="text-[10px] font-mono tracking-widest text-[#FF4D6A] uppercase font-bold">
+            <div className="flex flex-col text-left z-10 pr-1 sm:pr-2 min-w-0">
+              <span className="text-[9px] xs:text-[10px] font-mono tracking-widest text-[#FF4D6A] uppercase font-bold">
                 INSTAGRAM
               </span>
-              <span className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-wide drop-shadow-[0_2px_8px_rgba(235,0,40,0.7)]">
+              <span className="text-sm xs:text-base sm:text-2xl md:text-3xl font-extrabold text-white tracking-wide drop-shadow-[0_2px_8px_rgba(235,0,40,0.7)] truncate">
                 @{igHandle}
               </span>
             </div>
@@ -300,20 +300,20 @@ export const WinnerStageCard: React.FC<WinnerStageCardProps> = ({ draw }) => {
 
         {/* Decorative bottom red/white divider with stars */}
         <div
-          className={`flex items-center gap-3 mt-7 transition-all duration-700 delay-500 ${
+          className={`flex items-center gap-2 sm:gap-3 mt-4 xs:mt-5 sm:mt-7 transition-all duration-700 delay-500 ${
             showDetails ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-[#EB0028]" />
-          <span className="text-[#EB0028] text-sm">★</span>
-          <span className="text-white text-lg">★</span>
-          <span className="text-[#EB0028] text-sm">★</span>
-          <div className="w-16 sm:w-24 h-px bg-gradient-to-l from-transparent to-[#EB0028]" />
+          <div className="w-10 xs:w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-[#EB0028]" />
+          <span className="text-[#EB0028] text-xs sm:text-sm">★</span>
+          <span className="text-white text-sm sm:text-lg">★</span>
+          <span className="text-[#EB0028] text-xs sm:text-sm">★</span>
+          <div className="w-10 xs:w-16 sm:w-24 h-px bg-gradient-to-l from-transparent to-[#EB0028]" />
         </div>
 
         {/* Folded to Flight tagline */}
         <p
-          className={`mt-4 text-xs sm:text-sm font-mono tracking-[0.25em] text-neutral-400 uppercase transition-all duration-700 delay-700 ${
+          className={`mt-2 sm:mt-4 text-[10px] xs:text-xs sm:text-sm font-mono tracking-[0.2em] sm:tracking-[0.25em] text-neutral-400 uppercase transition-all duration-700 delay-700 ${
             showDetails ? 'opacity-100' : 'opacity-0'
           }`}
         >

@@ -217,35 +217,35 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
     <div className="w-full flex flex-col items-center justify-center relative">
       {/* 3D Curved Retro Arcade CRT Monitor Frame */}
       <div
-        className={`w-full crt-outer-bezel rounded-[2rem] p-3.5 sm:p-5 md:p-6 shadow-2xl relative flex flex-col transition-all duration-300 ${
+        className={`w-full crt-outer-bezel rounded-2xl sm:rounded-[2rem] p-2 xs:p-3 sm:p-5 md:p-6 shadow-2xl relative flex flex-col transition-all duration-300 ${
           isHeartbeating ? 'scale-[1.018] shadow-[0_0_60px_rgba(235,0,40,0.6)]' : ''
         }`}
       >
         {/* Corner Metallic Mounting Screws */}
-        <div className="absolute top-3 left-3 w-3 h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
-        <div className="absolute top-3 right-3 w-3 h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
-        <div className="absolute bottom-3 left-3 w-3 h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
-        <div className="absolute bottom-3 right-3 w-3 h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
+        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
+        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
+        <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[#666] to-[#222] border border-white/20 shadow-sm z-30" />
 
         {/* Inner Curved Phosphor CRT Screen */}
-        <div className="w-full min-h-[16rem] sm:min-h-[19rem] md:min-h-[21rem] crt-screen-curved rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden border-2 border-[#202330] flex flex-col items-center justify-center gap-3 sm:gap-5">
+        <div className="w-full min-h-[10.5rem] xs:min-h-[12.5rem] sm:min-h-[19rem] md:min-h-[21rem] crt-screen-curved rounded-xl sm:rounded-2xl p-2 xs:p-3 sm:p-6 md:p-8 relative overflow-hidden border-2 border-[#202330] flex flex-col items-center justify-center gap-2 xs:gap-3 sm:gap-5">
           
           {/* CRT Scanlines Filter */}
           <div className="absolute inset-0 crt-scanlines z-20 pointer-events-none opacity-45" />
 
           {/* CRT Curved Specular Glass Glare */}
-          <div className="absolute inset-0 crt-glass-specular z-20 pointer-events-none rounded-2xl" />
+          <div className="absolute inset-0 crt-glass-specular z-20 pointer-events-none rounded-xl sm:rounded-2xl" />
 
           {/* Dramatic Climax White / Red Voltage Flash Strobe */}
           {isClimaxFlash && (
-            <div className="absolute inset-0 bg-white/45 z-30 pointer-events-none animate-pulse rounded-2xl" />
+            <div className="absolute inset-0 bg-white/45 z-30 pointer-events-none animate-pulse rounded-xl sm:rounded-2xl" />
           )}
 
           {/* Attract Mode Dynamic Sheen Sweep */}
           {!isSpinning && <div className="dynamic-glass-sheen z-20" />}
 
           {/* 1. TOP ROW */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 max-w-full px-2 z-10 relative">
+          <div className="flex flex-wrap items-center justify-center gap-1 xs:gap-1.5 sm:gap-2.5 max-w-full px-1 sm:px-2 z-10 relative">
             {topChars.map((char, localIdx) => {
               const globalIndex = localIdx;
               const isSlotLocked = localIdx < lockedTopCount;
@@ -265,7 +265,7 @@ export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
 
           {/* 2. BOTTOM ROW */}
           {bottomChars.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 max-w-full px-2 z-10 relative">
+            <div className="flex flex-wrap items-center justify-center gap-1 xs:gap-1.5 sm:gap-2.5 max-w-full px-1 sm:px-2 z-10 relative">
               {bottomChars.map((char, localIdx) => {
                 const globalIndex = topChars.length + localIdx;
                 const isSlotLocked = localIdx < lockedBottomCount;
