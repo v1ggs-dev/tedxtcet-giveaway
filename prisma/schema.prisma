@@ -1,0 +1,41 @@
+﻿datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Participant {
+  id          String       @id @default(cuid())
+  name        String
+  email       String?
+  phone       String?
+  department  String?
+  customData  String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  draws       DrawRecord[]
+
+  @@index([name])
+}
+
+model DrawRecord {
+  id                String       @id @default(cuid())
+  drawNumber        Int          @default(autoincrement())
+  winnerId          String?
+  winnerName        String
+  totalParticipants Int
+  timestamp         DateTime     @default(now())
+  auditHash         String
+  mode              String       @default("LIVE")
+  operatorNotes     String?
+  createdAt         DateTime     @default(now())
+
+  participant       Participant? @relation(fields: [winnerId], references: [id], onDelete: SetNull)
+
+  @@index([mode])
+  @@index([timestamp])
+}

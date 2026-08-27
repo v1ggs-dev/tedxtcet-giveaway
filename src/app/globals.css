@@ -1,27 +1,279 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --ted-red: #EB0028;
+  --ted-red-glow: rgba(235, 0, 40, 0.4);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #050608;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  user-select: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* =========================================================================
+   1. 3D ARCADE CABINET BODY
+   ========================================================================= */
+.arcade-cabinet-body {
+  background: linear-gradient(180deg, #1C1D26 0%, #111218 35%, #08090C 100%);
+  border: 4px solid #2B2E3E;
+  box-shadow: 
+    0 0 0 2px #000000,
+    0 0 0 5px #151720,
+    0 30px 80px rgba(0, 0, 0, 0.98),
+    0 0 55px rgba(235, 0, 40, 0.15),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -6px 16px rgba(0, 0, 0, 0.85);
+}
+
+/* Speaker Grilles */
+.speaker-grille-mesh {
+  background-color: #08090C;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.2px, transparent 1.2px);
+  background-size: 5px 5px;
+  box-shadow: 
+    inset 0 4px 12px rgba(0, 0, 0, 0.95),
+    0 2px 6px rgba(255, 255, 255, 0.06);
+}
+
+.speaker-cone {
+  background: radial-gradient(circle at 45% 45%, #242735 0%, #0E0F14 60%, #050608 100%);
+  box-shadow: 
+    inset 0 3px 8px rgba(0, 0, 0, 0.9),
+    0 0 0 2px #1A1C24;
+}
+
+/* =========================================================================
+   2. CURVED CRT MONITOR SCREEN
+   ========================================================================= */
+.crt-outer-bezel {
+  background: linear-gradient(145deg, #252838 0%, #13141B 50%, #090A0E 100%);
+  border: 3px solid #363A4D;
+  box-shadow: 
+    inset 0 4px 18px rgba(0, 0, 0, 0.95),
+    0 10px 30px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(235, 0, 40, 0.15);
+}
+
+.crt-screen-curved {
+  background: radial-gradient(circle at 50% 50%, #151622 0%, #0A0B10 70%, #030406 100%);
+  box-shadow: 
+    inset 0 0 50px rgba(0, 0, 0, 0.98),
+    inset 0 0 20px rgba(235, 0, 40, 0.25),
+    0 0 30px rgba(235, 0, 40, 0.2);
+}
+
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.45) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.crt-glass-specular {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.03) 25%,
+    transparent 55%,
+    rgba(235, 0, 40, 0.08) 100%
+  );
+  pointer-events: none;
+}
+
+/* Drum Strips */
+.ivory-reel-strip {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F7 50%, #E2E4E8 100%);
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.5),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.drum-cylinder-shading {
+  background: linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+}
+
+@keyframes reel-fast-roll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.animate-reel-fast-roll {
+  animation: reel-fast-roll 0.2s linear infinite;
+  will-change: transform;
+}
+
+/* =========================================================================
+   3. PHYSICAL FORWARD-SLOPING CONTROL DECK & RECESSED MOUNTS
+   ========================================================================= */
+.physical-sloping-deck {
+  background: linear-gradient(175deg, #2D3040 0%, #1D1E28 35%, #101117 75%, #08090C 100%);
+  border-top: 3px solid #484C62;
+  border-left: 3px solid #222430;
+  border-right: 3px solid #222430;
+  box-shadow: 
+    0 -12px 30px rgba(0, 0, 0, 0.9),
+    0 25px 50px rgba(0, 0, 0, 0.98),
+    inset 0 2px 4px rgba(255, 255, 255, 0.25);
+  position: relative;
+}
+
+/* Extruded Front Lip with Chamfer */
+.deck-front-lip {
+  background: linear-gradient(180deg, #3C3F52 0%, #1B1C24 50%, #07080A 100%);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.95),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Recessed Joystick Well Dish */
+.recessed-joystick-well {
+  background: radial-gradient(circle at 50% 45%, #050608 0%, #101117 65%, #252836 100%);
+  border: 3px solid #36394A;
+  box-shadow: 
+    inset 0 8px 20px rgba(0, 0, 0, 0.98),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.85);
+}
+
+/* Rubber Dust Washer Collar */
+.joystick-dust-collar {
+  background: radial-gradient(circle at 45% 45%, #22242E 0%, #14151B 65%, #090A0E 100%);
+  border: 2px solid #000000;
+  box-shadow: 
+    0 3px 8px rgba(0, 0, 0, 0.9),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+/* Heavy Cylindrical Chrome Shaft */
+.heavy-chrome-shaft {
+  background: linear-gradient(90deg, #444754 0%, #999DAE 25%, #FFFFFF 50%, #878B9C 75%, #2B2D38 100%);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.85),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Substantial Solid Bat-Top Knob */
+.solid-battop-knob {
+  background: radial-gradient(circle at 35% 30%, #FFFFFF 0%, #E6E8ED 35%, #9DA1AD 70%, #565963 100%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.9),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+}
+
+/* Recessed Arcade Button Well Dish */
+.recessed-button-well {
+  background: radial-gradient(circle at 50% 45%, #050608 0%, #101117 65%, #252836 100%);
+  border: 3px solid #36394A;
+  box-shadow: 
+    inset 0 10px 24px rgba(0, 0, 0, 0.98),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.85);
+}
+
+/* Genuine Physical Plunger Arcade Push Button */
+.physical-arcade-plunger {
+  background: radial-gradient(circle at 35% 30%, #FF4D6A 0%, #EB0028 55%, #7A0012 100%);
+  border: 3px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 
+    0 8px 0 #4A000B,
+    0 14px 25px rgba(0, 0, 0, 0.85),
+    inset 0 3px 6px rgba(255, 255, 255, 0.4),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.6);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.physical-arcade-plunger:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 0 #4A000B,
+    0 18px 30px rgba(0, 0, 0, 0.95),
+    inset 0 3px 8px rgba(255, 255, 255, 0.6);
+}
+
+.physical-arcade-plunger:active {
+  transform: translateY(7px);
+  box-shadow: 
+    0 1px 0 #4A000B,
+    0 4px 10px rgba(0, 0, 0, 0.9),
+    inset 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+/* Carriage Screws / Bolts */
+.carriage-bolt {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #888C9C 45%, #2B2D38 85%, #101116 100%);
+  border: 1px solid #14151B;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================================================
+   4. ANIMATIONS & TITLE
+   ========================================================================= */
+@keyframes dynamic-glass-sheen-sweep {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+    opacity: 0;
   }
+  20% {
+    opacity: 0.5;
+  }
+  40% {
+    transform: translateX(250%) rotate(25deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(250%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.dynamic-glass-sheen {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.1) 48%,
+    rgba(235, 0, 40, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 52%,
+    transparent 58%
+  );
+  animation: dynamic-glass-sheen-sweep 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@keyframes cabinet-mechanical-jolt {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-2.5px, 5px) rotate(-0.3deg); }
+  30% { transform: translate(2.5px, -3.5px) rotate(0.2deg); }
+  45% { transform: translate(-1.8px, 2.5px) rotate(-0.1deg); }
+  60% { transform: translate(1.2px, -1.2px) rotate(0.05deg); }
+  75% { transform: translate(-0.5px, 0.5px) rotate(0deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.animate-cabinet-jolt {
+  animation: cabinet-mechanical-jolt 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.arcade-title-shadow {
+  text-shadow: 
+    0 2px 0 #000000,
+    0 0 20px rgba(235, 0, 40, 0.8),
+    0 0 45px rgba(235, 0, 40, 0.45);
 }

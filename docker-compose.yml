@@ -1,0 +1,36 @@
+﻿version: '3.8'
+
+services:
+  # 1. TEDxTCET Giveaway Application (Automated Docker Image from GHCR)
+  app:
+    image: ghcr.io/v1ggs-dev/tedxtcet-giveaway:latest
+    container_name: tedxtcet-giveaway-app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      # Persistent local database volume for participants and draw audit logs
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    networks:
+      - giveaway-network
+
+  # 2. Native Cloudflare Tunnel Container
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: tedxtcet-giveaway-tunnel
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate run
+    depends_on:
+      - app
+    networks:
+      - giveaway-network
+
+networks:
+  giveaway-network:
+    driver: bridge

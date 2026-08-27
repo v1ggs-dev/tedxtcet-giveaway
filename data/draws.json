@@ -1,0 +1,632 @@
+[
+  {
+    "id": "6ebf7f0c-bc22-4ba6-b0be-7df18721b762",
+    "drawNumber": 1,
+    "winnerId": "P-0102",
+    "winnerName": "TCET-GIVEAWAY-0102",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T07:24:29.230Z",
+    "auditHash": "b4b48909e9ead8e6bc6e7af3b8b6f244170c5e8d5e3695754aaf3404998a9041",
+    "mode": "LIVE"
+  },
+  {
+    "id": "5f981d65-0d43-474d-8f2c-2b6bcdd24041",
+    "drawNumber": 2,
+    "winnerId": "P-0417",
+    "winnerName": "TCET-GIVEAWAY-0417",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T07:29:43.308Z",
+    "auditHash": "c9e8555d6bc2dcaf55fb3d7ad4d5140c2be443fdb01e58e3de05ddd7c203826b",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "43e16c33-2165-4331-bf06-47b6b481e1e9",
+    "drawNumber": 3,
+    "winnerId": "P-0342",
+    "winnerName": "TCET-GIVEAWAY-0342",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T07:33:33.933Z",
+    "auditHash": "8ee6ea82f729bfd7dccbdb6a214709c849e6e37900da6166158699043510b90f",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "fbc2af65-e39b-4849-900b-21416b06e199",
+    "drawNumber": 4,
+    "winnerId": "P-0084",
+    "winnerName": "TCET-GIVEAWAY-0084",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T07:37:16.903Z",
+    "auditHash": "b0aa71323a80080dec3ab765d5130dd2582508d04b257f1fef8fbe954ebaf37b",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "c348cd67-b245-4e62-b385-ff5b782caf35",
+    "drawNumber": 5,
+    "winnerId": "P-0069",
+    "winnerName": "TCET-GIVEAWAY-0069",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T07:37:51.653Z",
+    "auditHash": "86267ebdca7076d5f395499b8c1c1f480b8f23545670ca6d04d312ea155b30bb",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "a52b340a-0b95-42a8-9ae8-80ebb18fd266",
+    "drawNumber": 6,
+    "winnerId": "P-0246",
+    "winnerName": "TCET-GIVEAWAY-0246",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T07:40:53.422Z",
+    "auditHash": "431d04fb1cc70e9d092c9d9a5549c94dfff8a898a5f96b7d01e94c05c6bdab3f",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "9894eccf-c388-4260-8f97-6a147a77b783",
+    "drawNumber": 7,
+    "winnerId": "P-0337",
+    "winnerName": "TCET-GIVEAWAY-0337",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T07:42:24.936Z",
+    "auditHash": "e10455162456f601cab894753c3ac2f295ca63454f1dbf69575586462e2da8f9",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "e9b1cb84-3215-41f0-9310-46776c5da88a",
+    "drawNumber": 8,
+    "winnerId": "P-0187",
+    "winnerName": "TCET-GIVEAWAY-0187",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T11:36:01.128Z",
+    "auditHash": "ac65ae18744c5b53e4f30af4781d41ee212324baea0bf713bfe63963b37a67af",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "d781f7ed-e841-4d78-9866-074fcc7da36a",
+    "drawNumber": 9,
+    "winnerId": "P-0478",
+    "winnerName": "TCET-GIVEAWAY-0478",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:10:24.684Z",
+    "auditHash": "dcd43ff550623659deabecb99d49ac0ce5ec1b2c8348ac2aacce0e964298dcba",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "ed8a60ec-14be-49c1-a717-4aa62c4055b4",
+    "drawNumber": 10,
+    "winnerId": "P-0061",
+    "winnerName": "TCET-GIVEAWAY-0061",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:10:45.631Z",
+    "auditHash": "2d560a67660fe2f195f559bddd9d9a1635feed0956c2bc292155e8492d432aef",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "6c69fef8-c5d4-45d0-b593-42c6116e8135",
+    "drawNumber": 11,
+    "winnerId": "P-0471",
+    "winnerName": "TCET-GIVEAWAY-0471",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:13:36.282Z",
+    "auditHash": "b0541bc74828efc3487c222c06d22dd7334a6d7f397187679fc8ba5c13cc1272",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "cb99d010-7a91-47a3-9e0e-da718296f8c5",
+    "drawNumber": 12,
+    "winnerId": "P-0450",
+    "winnerName": "TCET-GIVEAWAY-0450",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:15:15.165Z",
+    "auditHash": "37c3d942823d2668996c4019d1d5d776ec1fbce3948f55399e720a17750acda6",
+    "mode": "REHEARSAL"
+  },
+  {
+    "id": "866f53b2-78b1-4b28-a2c1-2046a0ad1b69",
+    "drawNumber": 13,
+    "winnerId": "P-0162",
+    "winnerName": "TCET-GIVEAWAY-0162",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:23:06.563Z",
+    "auditHash": "82e86beb1969ed4ab368d1575967fbde4b17fcb9b6b2080e00e51167528df60b",
+    "mode": "LIVE"
+  },
+  {
+    "id": "1bf27ac9-d2a2-469c-8bb2-27d6046a99e9",
+    "drawNumber": 14,
+    "winnerId": "P-0469",
+    "winnerName": "TCET-GIVEAWAY-0469",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:25:59.523Z",
+    "auditHash": "86c7ec2a397a323f4665269c85845bd49e8823f77529fb1b3b22c91e75ac1fb8",
+    "mode": "LIVE"
+  },
+  {
+    "id": "3c2a4275-0821-49f1-bc4d-e2e4b58cc572",
+    "drawNumber": 15,
+    "winnerId": "P-0368",
+    "winnerName": "TCET-GIVEAWAY-0368",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:31:34.589Z",
+    "auditHash": "a4bdecfaa1cc53ddf9d6d241e894cfc31f78b6ee71197026b108959e5437aaa7",
+    "mode": "LIVE"
+  },
+  {
+    "id": "53b59877-aa4f-40fb-97ea-01b6ec1a6734",
+    "drawNumber": 16,
+    "winnerId": "P-0418",
+    "winnerName": "TCET-GIVEAWAY-0418",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:44:55.737Z",
+    "auditHash": "550825e57c3bd81df15f0e44cdc0a4d08ad311a573f7e87b2ee4991f96d135dd",
+    "mode": "LIVE"
+  },
+  {
+    "id": "0cef7a3d-0701-4960-8380-028142967c12",
+    "drawNumber": 17,
+    "winnerId": "P-0159",
+    "winnerName": "TCET-GIVEAWAY-0159",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:45:04.414Z",
+    "auditHash": "fa79619195d1d1cb7247f13158299174acd24e33e049e22b3d90482f289e2d2a",
+    "mode": "LIVE"
+  },
+  {
+    "id": "61aa7eca-89c6-4521-bfa7-a58c4afec8e6",
+    "drawNumber": 18,
+    "winnerId": "P-0048",
+    "winnerName": "TCET-GIVEAWAY-0048",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:49:03.628Z",
+    "auditHash": "cc96b7d1a7b8f1e623f6b02de3cecb865b7029274d9ff901f9253998fc056170",
+    "mode": "LIVE"
+  },
+  {
+    "id": "bc89cd4f-0c83-4db5-8ae9-6cc19789d851",
+    "drawNumber": 19,
+    "winnerId": "P-0050",
+    "winnerName": "TCET-GIVEAWAY-0050",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:52:42.766Z",
+    "auditHash": "d8d60b57dc7d62212465e748c41775f794d0447d0b71df22f03fc291870d3d3c",
+    "mode": "LIVE"
+  },
+  {
+    "id": "584a8698-6925-47c2-a456-b720f466f722",
+    "drawNumber": 20,
+    "winnerId": "P-0307",
+    "winnerName": "TCET-GIVEAWAY-0307",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T12:59:19.216Z",
+    "auditHash": "a0784adc922f94f47c3ecf62b55fdfeae27f25846894f5b29fbcb2ae1397d5a6",
+    "mode": "LIVE"
+  },
+  {
+    "id": "89ffd998-4b74-4725-a867-6b478ac42d8d",
+    "drawNumber": 21,
+    "winnerId": "P-0455",
+    "winnerName": "TCET-GIVEAWAY-0455",
+    "totalParticipants": 528,
+    "timestamp": "2026-08-26T13:04:58.620Z",
+    "auditHash": "3d512c5f015ddd315b75d3c14a223ce6c03fe459594c12aae0b57c5b65533696",
+    "mode": "LIVE"
+  },
+  {
+    "id": "12beb8f5-5384-4e77-aa74-4f6268a67247",
+    "drawNumber": 22,
+    "winnerId": "P-0154",
+    "winnerName": "EKANSHI DESHMUKH",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:08:09.853Z",
+    "auditHash": "59826a0c510e45ce07d2d9066a3af02ef26b89ea394e97f3e00f2b511a36a456",
+    "mode": "LIVE"
+  },
+  {
+    "id": "a632d044-adfd-4f57-b88e-a0cd2050d294",
+    "drawNumber": 23,
+    "winnerId": "P-0112",
+    "winnerName": "YATEE SHETTY",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:12:25.509Z",
+    "auditHash": "b78a49f3c5c3a35ba055ab83071e22bdbed41f9f07b53d0f6a12e2ac8a97fafa",
+    "mode": "LIVE"
+  },
+  {
+    "id": "efdddd4b-83a7-44e4-a220-1a3a5e42df94",
+    "drawNumber": 24,
+    "winnerId": "P-0423",
+    "winnerName": "AYUSH VERMA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:13:02.970Z",
+    "auditHash": "b23cb9d1a4a18e096ab827409a9d962a3975ea81a031814820b2f3da898dd674",
+    "mode": "LIVE"
+  },
+  {
+    "id": "3466737f-01e0-499c-a1f2-412617930d85",
+    "drawNumber": 25,
+    "winnerId": "P-0250",
+    "winnerName": "MUSKAN MAKHIJA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:14:55.074Z",
+    "auditHash": "cfa2ab7a6747cf75beace5e2e0cc7fd058a911dcc79ce4978fea71e579063c3d",
+    "mode": "LIVE"
+  },
+  {
+    "id": "0e170c2c-420e-41a8-8043-75e60ea4809e",
+    "drawNumber": 26,
+    "winnerId": "P-0357",
+    "winnerName": "NITIN JHA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:15:24.361Z",
+    "auditHash": "f798fb8af369e235f9cad4a29139a1074dc9e60043f3310c7853ffed91b98f99",
+    "mode": "LIVE"
+  },
+  {
+    "id": "91fe16a7-bf25-496b-8b18-6b2548813f47",
+    "drawNumber": 27,
+    "winnerId": "P-0363",
+    "winnerName": "SHRUTI NALE",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:20:24.730Z",
+    "auditHash": "4300df03550d92a9f33c64fd2d9bbcdb7fabdb03fc0ca9cdfe53049b0793eb55",
+    "mode": "LIVE"
+  },
+  {
+    "id": "c94174bb-da59-485f-b260-1e6decfbb9d0",
+    "drawNumber": 28,
+    "winnerId": "P-0344",
+    "winnerName": "HARDIK BAGRI",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:20:41.096Z",
+    "auditHash": "7eb8a8a7567b9f3c66dc91be8db68090069156cbd0522b1c07754c3188e16e0e",
+    "mode": "LIVE"
+  },
+  {
+    "id": "24176239-1899-4d82-bd7e-07fbefaac099",
+    "drawNumber": 29,
+    "winnerId": "P-0136",
+    "winnerName": "SACHIN SANTOSH KANDU",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:20:49.751Z",
+    "auditHash": "c2ae6e988d3ae1080fabbc944e17c5ed0b35986e7ccc86e0af065f7aa00af6e1",
+    "mode": "LIVE"
+  },
+  {
+    "id": "c3738838-2dca-4a6c-8a2a-0329c92d56c9",
+    "drawNumber": 30,
+    "winnerId": "P-0261",
+    "winnerName": "HARSHIT MUNDRA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:20:57.378Z",
+    "auditHash": "ee0d03640e5c38c48be4d35eec9ced459f348506f19ac180b73a8f19e97d9c20",
+    "mode": "LIVE"
+  },
+  {
+    "id": "9e48ca9b-dd6d-407f-a031-59a572092012",
+    "drawNumber": 31,
+    "winnerId": "P-0334",
+    "winnerName": "AAKASH RB",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:21:56.730Z",
+    "auditHash": "06f0d37a68ca5f1d63367aedb45de45876e599e598f2dfb526eabcf3b7ae0f30",
+    "mode": "LIVE"
+  },
+  {
+    "id": "b6bbfd9a-73b6-40dd-987a-d4488177d45b",
+    "drawNumber": 32,
+    "winnerId": "P-0140",
+    "winnerName": "PRANAY",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:33:16.164Z",
+    "auditHash": "9245c92da8f34e3c40065b008712752e1533058cf322850a7b9c1c15891008b4",
+    "mode": "LIVE"
+  },
+  {
+    "id": "2dce0dd4-5810-439e-95f6-5962755324c9",
+    "drawNumber": 33,
+    "winnerId": "P-0147",
+    "winnerName": "ANVI WAWDE",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:37:21.478Z",
+    "auditHash": "9e5a474712a1f8f712221d04e873093a37dbaf0e56545a81f4233c5edba3a3fa",
+    "mode": "LIVE"
+  },
+  {
+    "id": "beaac390-92aa-4af1-b86b-56d1ce047299",
+    "drawNumber": 34,
+    "winnerId": "P-0043",
+    "winnerName": "AKRITI SINGH",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:40:11.641Z",
+    "auditHash": "0ed70628f2faca6c22674eea722b9e69ddecf003df1ff7571c56c9f24e27abce",
+    "mode": "LIVE"
+  },
+  {
+    "id": "0ff3f47e-0306-40f9-9884-cb3ac6268ef3",
+    "drawNumber": 35,
+    "winnerId": "P-0258",
+    "winnerName": "PRISHA MISHRA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:42:24.391Z",
+    "auditHash": "2532e7b3aa4c27df129fddd4aef7274eab22c95112e0ffccbc99c59a16c84141",
+    "mode": "LIVE"
+  },
+  {
+    "id": "5dec57cc-5fc3-497e-ad68-6fea93927d27",
+    "drawNumber": 36,
+    "winnerId": "P-0080",
+    "winnerName": "YOGESH JAISWAL",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:44:17.930Z",
+    "auditHash": "b9eae075271b3bcea2a69984db97373a3bff0623ab9223c16fb9d2695dd41da8",
+    "mode": "LIVE"
+  },
+  {
+    "id": "aef7a43c-e75f-4b1a-a691-1a5518355c13",
+    "drawNumber": 37,
+    "winnerId": "P-0276",
+    "winnerName": "RISHI VIMAL PANDYA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:51:11.694Z",
+    "auditHash": "065d51e95b1018a2e67ec51f80b2f4c48cdbe04881dfa1a007dd27fce282cb66",
+    "mode": "LIVE"
+  },
+  {
+    "id": "22d829b3-0de7-41cf-95f8-d8fef644fe5c",
+    "drawNumber": 38,
+    "winnerId": "P-0392",
+    "winnerName": "RAJ",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T13:59:25.116Z",
+    "auditHash": "dd3db997de06bb79babfc7ea55d4d7addb76a685d7dbd6abf1ccd81915429858",
+    "mode": "LIVE"
+  },
+  {
+    "id": "d0aae024-03cf-4651-a525-7f7968b70631",
+    "drawNumber": 39,
+    "winnerId": "P-0114",
+    "winnerName": "KAMAL SUTHAR",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T14:04:44.293Z",
+    "auditHash": "401a1cff8d6322834f36a8c158b98928493caa4d80ac814da596258b87c5fdaa",
+    "mode": "LIVE"
+  },
+  {
+    "id": "8c6720e4-63b6-45c8-b2ba-2de0a749de11",
+    "drawNumber": 40,
+    "winnerId": "P-0172",
+    "winnerName": "DIVYANSHU SINGH",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T14:30:28.421Z",
+    "auditHash": "95a9c51ac3b3ec5f2334a06de352fad32f96479a8e0dc9a07619568125f293bb",
+    "mode": "LIVE"
+  },
+  {
+    "id": "0bd970be-b166-4d65-a28c-54c8029f51f0",
+    "drawNumber": 41,
+    "winnerId": "P-0048",
+    "winnerName": "RAHUL",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T14:30:53.085Z",
+    "auditHash": "33343b90d8a1ff2d31d733036e301eec1bb4cbabe325e45d3dee82bf71228618",
+    "mode": "LIVE"
+  },
+  {
+    "id": "b4bc1b84-f0d7-4149-a4b1-a1c3222a0c16",
+    "drawNumber": 42,
+    "winnerId": "P-0363",
+    "winnerName": "SHRUTI NALE",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T14:41:24.170Z",
+    "auditHash": "9fec3fc4877c6ed2ecdfee625af35a3f8d75c0961d7f90d9af836e6f1b51c65f",
+    "mode": "LIVE"
+  },
+  {
+    "id": "537c421f-9050-458e-b35b-ca3df08321bb",
+    "drawNumber": 43,
+    "winnerId": "P-0175",
+    "winnerName": "GARGI CHAVAN",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T14:42:12.609Z",
+    "auditHash": "432fea7fbe8a1571c1f54d4d2e76e86bcb46f5cab0538f3e14d8cd6c5b974a09",
+    "mode": "LIVE"
+  },
+  {
+    "id": "fa0a97d6-ed1c-4643-9fba-f1ccc286dbd6",
+    "drawNumber": 44,
+    "winnerId": "P-0246",
+    "winnerName": "YASH KHATRI",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T14:42:27.676Z",
+    "auditHash": "362c146cfb7684a77932053355b63232c2fe17d76944eb441c71af1a839ad199",
+    "mode": "LIVE"
+  },
+  {
+    "id": "b52b1f7c-ec6d-484d-8446-36f782cc32d6",
+    "drawNumber": 45,
+    "winnerId": "P-0001",
+    "winnerName": "SANSKRUTI SALVI",
+    "totalParticipants": 1,
+    "timestamp": "2026-08-26T14:46:27.678Z",
+    "auditHash": "e0859907a9b36cf3f2124d8b103c413ad4dea308db343b210121e6875d5a96c1",
+    "mode": "LIVE"
+  },
+  {
+    "id": "174a0309-03bb-4a27-b081-b8083181ef20",
+    "drawNumber": 46,
+    "winnerId": "P-0001",
+    "winnerName": "SANSKRUTI SALVI",
+    "totalParticipants": 1,
+    "timestamp": "2026-08-26T15:20:13.023Z",
+    "auditHash": "065aba823607641e98fe3e36cd3041553775c74cc45326ccbc441f9fda098d99",
+    "mode": "LIVE"
+  },
+  {
+    "id": "a7b4bc1d-2c88-4c72-ab74-d8e5ae2cc8f3",
+    "drawNumber": 47,
+    "winnerId": "P-0007",
+    "winnerName": "BHARATI RITESH GUPTA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T15:24:34.654Z",
+    "auditHash": "9a31b33e02b765fa3c3ce641cc0201adcf985465744dc10b3792da40e8b0fba0",
+    "mode": "LIVE"
+  },
+  {
+    "id": "d73846b4-dc3a-42d5-b7ec-7b7008dc1920",
+    "drawNumber": 48,
+    "winnerId": "P-0189",
+    "winnerName": "VAISHNAVI PATHAK",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T15:36:08.968Z",
+    "auditHash": "c1a0c229381d149466c82fb2bf29362a60e7924147e909cb998101d3b5c72ab0",
+    "mode": "LIVE"
+  },
+  {
+    "id": "ce347ae3-58db-4555-9839-9b92c351830b",
+    "drawNumber": 49,
+    "winnerId": "P-0170",
+    "winnerName": "NISHANT APTE",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T16:49:17.359Z",
+    "auditHash": "0e495d43c446b3943835e49950d02be1037614a4b5dd904f15a6a3ce8f57e8d8",
+    "mode": "LIVE"
+  },
+  {
+    "id": "5a20e8c2-9bc0-4eba-8ef7-810bacc5fa0f",
+    "drawNumber": 50,
+    "winnerId": "P-0242",
+    "winnerName": "RITUJA GOVINDRAJ",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T16:50:37.003Z",
+    "auditHash": "03843d93739b0b43defa023a15690ed6ccd710f23bd3fdf6aa828de67f490fb5",
+    "mode": "LIVE"
+  },
+  {
+    "id": "ad0c72c1-d75d-47c8-98c8-1ce55f6782a6",
+    "drawNumber": 51,
+    "winnerId": "P-0255",
+    "winnerName": "RAED TANWAR",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T17:18:46.072Z",
+    "auditHash": "a8f33b3fe56d7f0284c0e6d5c457f53588d6700ea435bba69ebf28c103114a71",
+    "mode": "LIVE"
+  },
+  {
+    "id": "2664f8d1-aaeb-45da-bece-062513241b28",
+    "drawNumber": 52,
+    "winnerId": "P-0182",
+    "winnerName": "NISHANT CHOUDHARY",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T17:26:07.970Z",
+    "auditHash": "3901e910dcfc76df35b2628eef821cb6711021020c980cd3e0ac3ccb80a3c8b9",
+    "mode": "LIVE"
+  },
+  {
+    "id": "b965908a-c3c2-4113-9e9b-afccb03649d0",
+    "drawNumber": 53,
+    "winnerId": "P-0262",
+    "winnerName": "ATHARWA PATIL",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T17:35:11.849Z",
+    "auditHash": "fc4300c07c63a22571cb2eb3edfb2ee63b4ea9f4171470ecb334f588ff0ea3d6",
+    "mode": "LIVE"
+  },
+  {
+    "id": "82b14adb-a8cf-4fdc-97b3-18b48fdd6b33",
+    "drawNumber": 54,
+    "winnerId": "P-0026",
+    "winnerName": "SURAJ SONI",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T17:45:13.293Z",
+    "auditHash": "912c3dddc2655363fd90529f29985762e015d4c25735324d3ec2ae8046b74465",
+    "mode": "LIVE"
+  },
+  {
+    "id": "4f28df33-c20c-4ad2-a3b1-3568e1f776e0",
+    "drawNumber": 55,
+    "winnerId": "P-0305",
+    "winnerName": "ANJALI DEEPAK BANSODE",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T17:51:47.045Z",
+    "auditHash": "016986e200cbab5162fcc5ec7f14df0468a960b0edf4fa5ddd929460cb603726",
+    "mode": "LIVE"
+  },
+  {
+    "id": "51b125f8-2aef-4ea7-a4bb-d9ba9e965be4",
+    "drawNumber": 56,
+    "winnerId": "P-0303",
+    "winnerName": "VIHAANG KANODIA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T17:55:50.368Z",
+    "auditHash": "660a252a05e2240cbda191907c7c8db63e4e68d5a3c7d7b661502a630277062a",
+    "mode": "LIVE"
+  },
+  {
+    "id": "93a3c804-faeb-4cad-bc14-22fda8ec0d37",
+    "drawNumber": 57,
+    "winnerId": "P-0169",
+    "winnerName": "SAKSHAM DUBEY",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T17:56:13.684Z",
+    "auditHash": "fc0f8570f82a155fddb2f05e435541c2a2a4dcd11766a0119ba4e727c1f8881b",
+    "mode": "LIVE"
+  },
+  {
+    "id": "372643b1-6706-4cd9-80e2-fda19c39287c",
+    "drawNumber": 58,
+    "winnerId": "P-0357",
+    "winnerName": "NITIN JHA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T18:13:27.125Z",
+    "auditHash": "0795003ddb4cffe7cb3222df206cb3433749d21f0e246dd17051e85d6ec2c432",
+    "mode": "LIVE"
+  },
+  {
+    "id": "640534f0-83b0-4c24-b72a-63d890780e0c",
+    "drawNumber": 59,
+    "winnerId": "P-0223",
+    "winnerName": "SHUBHAM YADAV",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T18:15:48.358Z",
+    "auditHash": "e2e28c9ea31e8909011ba56685fd5e5cba3a63dbd882df9cca6bc25fd89cf157",
+    "mode": "LIVE"
+  },
+  {
+    "id": "8e8d9b7c-5a32-4b36-af5a-24c2e94210b7",
+    "drawNumber": 60,
+    "winnerId": "P-0384",
+    "winnerName": "RUCHI",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T18:28:43.072Z",
+    "auditHash": "52297682dccd6c4109cff38794cb2cb2b59475859cc9bc0c2235f2d3fcbc06e5",
+    "mode": "LIVE"
+  },
+  {
+    "id": "f376342f-6974-4859-8cbe-1a113d864141",
+    "drawNumber": 61,
+    "winnerId": "P-0373",
+    "winnerName": "SHUBHAM SINGH",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T18:31:34.583Z",
+    "auditHash": "0c62a6398dd4365e45c9cc01652583404cd3816559e6a47488d58f60eabdd982",
+    "mode": "LIVE"
+  },
+  {
+    "id": "0ecf4fd6-c74a-433c-b5f6-723b0b6053fc",
+    "drawNumber": 62,
+    "winnerId": "P-0379",
+    "winnerName": "SHEKHARKUMAR JHA",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T18:32:07.780Z",
+    "auditHash": "e8393aecad7dc7873c752106f03f1d465be6c3d2d92a26d96d7cae741fc016e8",
+    "mode": "LIVE"
+  },
+  {
+    "id": "b695dda0-6a9f-4efd-a12b-46812dd42ab8",
+    "drawNumber": 63,
+    "winnerId": "P-0376",
+    "winnerName": "VISHESH BHOYAR",
+    "totalParticipants": 425,
+    "timestamp": "2026-08-26T18:36:24.595Z",
+    "auditHash": "f8b954f4a046a889e5719934d8f358f24ef9a2058284fe7c59b804bab2c734d4",
+    "mode": "LIVE"
+  }
+]
