@@ -29,19 +29,14 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
-
-# Create data directory with proper permissions
-RUN mkdir -p data && chown -R nextjs:nodejs data
+# Create data directory with 777 permissions to avoid volume mount permission issues
+RUN mkdir -p data && chmod 777 data
 
 # Copy public assets & standalone bundle
 COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/data ./data
-
-USER nextjs
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/data ./data
 
 EXPOSE 3000
 

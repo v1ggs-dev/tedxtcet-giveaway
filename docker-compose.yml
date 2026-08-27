@@ -1,16 +1,15 @@
-﻿version: '3.8'
-
-services:
+﻿services:
   # 1. TEDxTCET Giveaway Application (Automated Docker Image from GHCR)
   app:
     image: ghcr.io/v1ggs-dev/tedxtcet-giveaway:latest
     container_name: tedxtcet-giveaway-app
     restart: unless-stopped
+    user: "0:0"
     ports:
       # Maps host port (default 3005, customizable via .env) to avoid conflicts with port 3000
       - "127.0.0.1:${HOST_PORT:-3005}:3000"
     volumes:
-      # Persistent local database volume for participants and draw records
+      # Persistent local database volume for participants and draw audit logs
       - ./data:/app/data
     environment:
       - NODE_ENV=production

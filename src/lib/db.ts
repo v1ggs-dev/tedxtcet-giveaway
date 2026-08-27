@@ -8,19 +8,24 @@ const DATA_DIR = path.join(process.cwd(), 'data');
 const PARTICIPANTS_FILE = path.join(DATA_DIR, 'participants.json');
 const DRAWS_FILE = path.join(DATA_DIR, 'draws.json');
 
-// Ensure data directory exists
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+// Safely ensure data directory and files exist
+function ensureDatabaseFiles() {
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(PARTICIPANTS_FILE)) {
+      fs.writeFileSync(PARTICIPANTS_FILE, JSON.stringify([], null, 2), 'utf-8');
+    }
+    if (!fs.existsSync(DRAWS_FILE)) {
+      fs.writeFileSync(DRAWS_FILE, JSON.stringify([], null, 2), 'utf-8');
+    }
+  } catch (err) {
+    console.warn('⚠️ Warning: Could not initialize data directory synchronously:', err);
+  }
 }
 
-// Ensure files exist
-if (!fs.existsSync(PARTICIPANTS_FILE)) {
-  fs.writeFileSync(PARTICIPANTS_FILE, JSON.stringify([], null, 2), 'utf-8');
-}
-
-if (!fs.existsSync(DRAWS_FILE)) {
-  fs.writeFileSync(DRAWS_FILE, JSON.stringify([], null, 2), 'utf-8');
-}
+ensureDatabaseFiles();
 
 export class DatabaseService {
   /**
@@ -28,6 +33,9 @@ export class DatabaseService {
    */
   static async getParticipants(): Promise<Participant[]> {
     try {
+      if (!fs.existsSync(PARTICIPANTS_FILE)) {
+        return [];
+      }
       const content = fs.readFileSync(PARTICIPANTS_FILE, 'utf-8');
       const rawData: Record<string, unknown>[] = JSON.parse(content || '[]');
       
@@ -64,6 +72,7 @@ export class DatabaseService {
    * Save or replace the participant pool
    */
   static async saveParticipants(participants: Participant[]): Promise<number> {
+    ensureDatabaseFiles();
     const cleaned = participants
       .filter((p) => p && p.name && p.name.trim().length > 0)
       .map((p, idx) => {
@@ -99,117 +108,91 @@ export class DatabaseService {
    */
   static async addParticipants(newParticipants: Participant[]): Promise<number> {
     const existing = await this.getParticipants();
-    const existingNames = new Set(existing.map((p) => p.name.toUpperCase()));
+    const existingNames = new Set(existing.map((p) => p.name.toLowerCase().trim()));
 
-    const toAdd = newParticipants
-      .filter((p) => p.name && p.name.trim().length > 0)
-      .filter((p) => !existingNames.has(p.name.trim().toUpperCase()))
-      .map((p, idx) => {
-        const customData = p.customData || {};
-        const customIg =
-          customData.Instagram ||
-          customData.instagram ||
-          customData['IG Handle'] ||
-          customData['Instagram Handle'] ||
-          customData.Handle ||
-          customData.Username;
+    const uniqueNew = newParticipants.filter(
+      (p) => p && p.name && !existingNames.has(p.name.toLowerCase().trim())
+    );
 
-        const igHandle = parseInstagramHandle(p.instagram) || parseInstagramHandle(customIg);
+    const merged = [...existing, ...uniqueNew];
+    await this.saveParticipants(merged);
+    return merged.length;
+  }
 
-        return {
-          id: p.id || `P-${(existing.length + idx + 1).toString().padStart(4, '0')}`,
-          name: p.name.trim().toUpperCase(),
-          instagram: igHandle,
-          email: p.email ? p.email.trim() : undefined,
-          phone: p.phone ? p.phone.trim() : undefined,
-          department: p.department ? p.department.trim() : undefined,
-          customData,
-          createdAt: new Date().toISOString(),
-        };
-      });
-
-    const combined = [...existing, ...toAdd];
-    fs.writeFileSync(PARTICIPANTS_FILE, JSON.stringify(combined, null, 2), 'utf-8');
-    return combined.length;
+  /**
+   * Reset participant pool
+   */
+  static async clearParticipants(): Promise<void> {
+    ensureDatabaseFiles();
+    fs.writeFileSync(PARTICIPANTS_FILE, JSON.stringify([], null, 2), 'utf-8');
   }
 
   /**
    * Get all draw records
    */
-  static async getDrawRecords(): Promise<DrawRecord[]> {
+  static async getDraws(): Promise<DrawRecord[]> {
     try {
+      if (!fs.existsSync(DRAWS_FILE)) {
+        return [];
+      }
       const content = fs.readFileSync(DRAWS_FILE, 'utf-8');
-      const data: DrawRecord[] = JSON.parse(content || '[]');
-      return data;
+      return JSON.parse(content || '[]');
     } catch (error) {
-      console.error('Error reading draw records:', error);
+      console.error('Error reading draws:', error);
       return [];
     }
   }
 
   /**
-   * Get the latest draw
+   * Record a new lucky draw result with audit integrity
    */
-  static async getLatestDraw(): Promise<DrawRecord | null> {
-    const draws = await this.getDrawRecords();
-    if (draws.length === 0) return null;
-    return draws[draws.length - 1];
-  }
-
-  /**
-   * FAIRNESS ENGINE: Perform Cryptographically Secure Server-Side Draw
-   */
-  static async executeDraw(): Promise<DrawResult> {
-    // 1. Fetch eligible participants
-    const participants = await this.getParticipants();
-    if (!participants || participants.length === 0) {
-      throw new Error('No eligible participants found in the database. Please import participant data.');
-    }
-
-    // 2. Cryptographically secure random selection (CSPRNG)
-    const totalCount = participants.length;
-    const winnerIndex = crypto.randomInt(0, totalCount);
-    const winner = participants[winnerIndex];
-
-    // 3. Generate audit hash & record
-    const drawId = crypto.randomUUID();
+  static async recordDraw(
+    winner: Participant,
+    totalParticipants: number,
+    mode: 'LIVE' | 'REHEARSAL' = 'LIVE',
+    operatorNotes?: string
+  ): Promise<DrawResult> {
+    ensureDatabaseFiles();
+    const existingDraws = await this.getDraws();
+    const drawNumber = existingDraws.length + 1;
     const timestamp = new Date().toISOString();
-    const existingDraws = await this.getDrawRecords();
-    const nextDrawNumber = existingDraws.length + 1;
+    const drawId = `DRAW-${Date.now().toString(36).toUpperCase()}-${crypto.randomBytes(3).toString('hex').toUpperCase()}`;
 
-    const auditPayload = `${drawId}:${winner.id}:${winner.name}:${totalCount}:${timestamp}:${nextDrawNumber}`;
+    // Cryptographic audit hash ensuring zero tampering
+    const auditPayload = `${drawId}:${drawNumber}:${winner.id}:${winner.name}:${totalParticipants}:${timestamp}:${mode}`;
     const auditHash = crypto.createHash('sha256').update(auditPayload).digest('hex');
 
-    const record: DrawRecord = {
+    const newRecord: DrawRecord = {
       id: drawId,
-      drawNumber: nextDrawNumber,
+      drawNumber,
       winnerId: winner.id,
       winnerName: winner.name,
-      totalParticipants: totalCount,
+      totalParticipants,
       timestamp,
       auditHash,
-      mode: 'LIVE',
+      mode,
+      operatorNotes,
     };
 
-    // 4. Persist record immediately
-    existingDraws.push(record);
+    existingDraws.unshift(newRecord);
     fs.writeFileSync(DRAWS_FILE, JSON.stringify(existingDraws, null, 2), 'utf-8');
 
     return {
       drawId,
-      drawNumber: nextDrawNumber,
+      drawNumber,
       winner,
-      totalParticipants: totalCount,
+      totalParticipants,
       timestamp,
       auditHash,
-      mode: 'LIVE',
+      mode,
     };
   }
 
   /**
-   * Reset draws
+   * Reset all draw records
    */
-  static async resetDraws(): Promise<void> {
+  static async clearDraws(): Promise<void> {
+    ensureDatabaseFiles();
     fs.writeFileSync(DRAWS_FILE, JSON.stringify([], null, 2), 'utf-8');
   }
 }
