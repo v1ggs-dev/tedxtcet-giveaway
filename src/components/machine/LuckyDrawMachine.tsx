@@ -219,6 +219,7 @@ export const LuckyDrawMachine: React.FC = () => {
               <MechanicalReelDisplay
                 winnerName={winnerResult?.winner.name || (state === 'READY' ? 'TEDxTCET 2026' : 'SELECTING')}
                 state={state}
+                participantCount={participantCount}
                 onAllSlotsLocked={handleAllSlotsLocked}
               />
             )}

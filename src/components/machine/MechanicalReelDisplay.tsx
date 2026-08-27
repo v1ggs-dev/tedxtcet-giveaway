@@ -8,6 +8,7 @@ import { sound } from '@/lib/audio';
 interface MechanicalReelDisplayProps {
   winnerName: string;
   state: DrawState;
+  participantCount: number;
   onAllSlotsLocked: () => void;
 }
 
@@ -17,18 +18,21 @@ interface TeaserStage {
   durationMs: number;
 }
 
-const TEASER_STAGES: TeaserStage[] = [
-  { top: 'CALCULATING', bottom: '425 ENTRIES', durationMs: 3200 },
-  { top: 'IS IT YOU?', bottom: 'MAYBE ★', durationMs: 3400 },
-  { top: 'HOLD ON...', bottom: 'ALMOST THERE', durationMs: 3400 },
-  { top: 'LUCKY ONE', bottom: 'SELECTED ★', durationMs: 3500 },
-];
-
 export const MechanicalReelDisplay: React.FC<MechanicalReelDisplayProps> = ({
   winnerName,
   state,
+  participantCount,
   onAllSlotsLocked,
 }) => {
+  // Dynamic teaser stages — uses real participant count
+  const entryCountLabel = `${participantCount || '???'} ENTRIES`;
+  const TEASER_STAGES: TeaserStage[] = [
+    { top: 'CALCULATING', bottom: entryCountLabel, durationMs: 3200 },
+    { top: 'IS IT YOU?', bottom: 'MAYBE ★', durationMs: 3400 },
+    { top: 'HOLD ON...', bottom: 'ALMOST THERE', durationMs: 3400 },
+    { top: 'LUCKY ONE', bottom: 'SELECTED ★', durationMs: 3500 },
+  ];
+
   // Winner name formatted and split
   const rawName = (winnerName || 'TEDxTCET 2026').trim().toUpperCase();
   const nameParts = rawName.split(/\s+/);
