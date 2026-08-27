@@ -47,7 +47,9 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
   }, [globalIndex]);
 
   // -------------------------------------------------------------------------
-  // Sizing tiers — drives both the flex-item wrapper AND inner housing
+  // Sizing tiers — ONLY uses standard Tailwind spacing values
+  // h-10=40px, h-12=48px, h-14=56px, h-16=64px, h-20=80px
+  // w-5=20px, w-6=24px, w-7=28px, w-8=32px, w-10=40px, w-12=48px
   // -------------------------------------------------------------------------
   const isLongRow = rowLength >= 10;
   const isMediumRow = rowLength >= 8 && rowLength < 10;
@@ -60,8 +62,8 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
           isLongRow
             ? 'w-1 xs:w-1.5 sm:w-3 h-10 xs:h-12 sm:h-20 shrink'
             : isMediumRow
-            ? 'w-1.5 xs:w-2 sm:w-3.5 h-12 xs:h-14 sm:h-20 shrink'
-            : 'w-2 xs:w-2.5 sm:w-4 h-13 xs:h-15 sm:h-22 shrink'
+            ? 'w-1.5 xs:w-2 sm:w-3 h-12 xs:h-14 sm:h-20 shrink'
+            : 'w-2 xs:w-2.5 sm:w-4 h-12 xs:h-14 sm:h-20 shrink'
         }
       />
     );
@@ -69,13 +71,12 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
 
   const isCurrentlySpinning = isSpinning && !isLocked;
 
-  // Outer wrapper sizing — this is the flex item the row container lays out.
-  // It carries width + height and is allowed to shrink (no shrink-0).
+  // Outer wrapper sizing — all values are standard Tailwind spacing
   const wrapperSize = isLongRow
-    ? 'w-5 xs:w-6 sm:w-10 md:w-12 h-10 xs:h-12 sm:h-20 md:h-22'
+    ? 'w-5 xs:w-6 sm:w-10 md:w-12 h-10 xs:h-12 sm:h-20'
     : isMediumRow
-    ? 'w-6 xs:w-7 sm:w-10 md:w-12 h-12 xs:h-14 sm:h-20 md:h-22'
-    : 'w-7 xs:w-8 sm:w-11 md:w-13 h-13 xs:h-15 sm:h-22';
+    ? 'w-6 xs:w-7 sm:w-10 md:w-12 h-12 xs:h-14 sm:h-20'
+    : 'w-7 xs:w-8 sm:w-10 md:w-12 h-12 xs:h-14 sm:h-20';
 
   const fontDimensions = isLongRow
     ? 'text-[10px] xs:text-xs sm:text-2xl md:text-3xl'
@@ -83,11 +84,12 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
     ? 'text-xs xs:text-sm sm:text-2xl md:text-3xl'
     : 'text-sm xs:text-lg sm:text-3xl md:text-4xl';
 
+  // Roll strip cell height must match the slot height
   const rollHeight = isLongRow
-    ? 'h-[40px] xs:h-[48px] sm:h-[80px]'
+    ? 'h-10 xs:h-12 sm:h-20'
     : isMediumRow
-    ? 'h-[48px] xs:h-[56px] sm:h-[80px]'
-    : 'h-[52px] xs:h-[60px] sm:h-[88px]';
+    ? 'h-12 xs:h-14 sm:h-20'
+    : 'h-12 xs:h-14 sm:h-20';
 
   return (
     <div className={`${wrapperSize} relative select-none shrink`}>
@@ -102,8 +104,8 @@ export const CharacterReelSlot: React.FC<CharacterReelSlotProps> = ({
         } ${hasOvershot ? 'scale-105' : 'scale-100'}`}
       >
         {/* Top & Bottom 3D Cylinder Curvature Shadows */}
-        <div className="absolute inset-x-0 top-0 h-3 xs:h-3.5 sm:h-6 drum-cylinder-shading z-20 pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-3 xs:h-3.5 sm:h-6 drum-cylinder-shading rotate-180 z-20 pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-3 sm:h-6 drum-cylinder-shading z-20 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-3 sm:h-6 drum-cylinder-shading rotate-180 z-20 pointer-events-none" />
 
         {/* 1. GPU High-Speed Spinning Strip */}
         {isCurrentlySpinning && (
